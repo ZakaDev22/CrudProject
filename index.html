@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaka Crud Project</title>
 </head>
+
 <body>
-    
+
+    <head>
+        <h1>CRUD Project</h1>
+        <p>This is My First HTML CSS JS Crud Project</p>
+    </head>
+    <main>
+        <section id="inputs">
+            <h2>Add New User</h2>
+            <form method="post">
+                <input type="text" placeholder="Name" id="name" required>
+                <input type="email" placeholder="Email" id="email" required>
+                <input type="tel" placeholder="Phone" id="phone" required>
+                <input type="number" placeholder="Age" id="age" min="0" max="100" required>
+                <input type="text" placeholder="City" id="city" required>
+                <input type="text" placeholder="Role" id="role" required>
+                <button type="submit">Add User</button>
+            </form>
+        </section>
+        <section id="outputs">
+            <h2>Users</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Zaka</td>
+                        <td>zaka22@gmail.com</td>
+                        <td>1234567890</td>
+                        <td>
+                            <button>Edit</button>
+                        </td>
+                        <td>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+    </main>
+    <footer>
+        <!-- <p>Created By Zaka</p> -->
+    </footer>
 </body>
+
 </html>
