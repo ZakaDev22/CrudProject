@@ -1,9 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Poppins', sans-serif;
     background-color: #111;
     color: white;
@@ -11,7 +12,8 @@ body{
     margin: auto;
     text-align: center;
 }
-header{
+
+header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -19,6 +21,7 @@ header{
     padding: 20px 0;
     margin: 10px;
 }
+
 header h1 {
     font-size: 2.5rem;
     background-image: linear-gradient(to right, #ff105f, #3cff06);
@@ -33,6 +36,29 @@ header h1 {
 
 header h1:hover {
     transform: scale(1.1);
-    background-position: 100% 0; 
+    background-position: 100% 0;
     background-image: linear-gradient(to left, #e74279, #0617ff);
+    letter-spacing: 3px;
+}
+
+#inputs form {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    box-shadow: 5px 5px 10px #ffffff80
+                , 5px -5px 10px #ffffff80
+                , -5px 5px 10px #ffffff80
+                , -5px -5px 10px #ffffff80; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    margin: 10px;
+    padding: 5px;
+}
+#inputs form input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #111;
+    color: white;
 }
