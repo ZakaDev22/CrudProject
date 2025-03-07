@@ -54,7 +54,7 @@ header h1:hover {
     margin: 10px;
 }
 
-#inputs form input {
+#inputs form input, #search input {
     width: 80%;
     padding: 10px;
     margin: 10px 0;
@@ -88,4 +88,26 @@ button {
 button:hover {
     background-color: white;
     color: #111;
+}
+
+#search { 
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    background: rgba(155, 24, 24, 0.1); 
+    border-radius: 10px;
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    box-shadow: 5px 5px 15px #0b732380;
+    border: 2px solid rgba(255, 255, 255, 0.2); 
+}
+#search button {
+    width: 40%;
+    margin: 10px;
+}
+#search .filterBy {
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
