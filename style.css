@@ -94,7 +94,7 @@ input:focus {
     color: white;
     border: 1px solid rgb(75, 189, 0);
     border-radius: 5px;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 #inputs form:has(input:user-invalid) #submit {
