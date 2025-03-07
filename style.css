@@ -10,7 +10,11 @@ body {
     color: white;
     width: 80%;
     margin: auto;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
 }
 
 header {
@@ -31,6 +35,28 @@ header h1 {
     background-size: 200% 100%;
     background-position: 0 0;
     cursor: pointer;
+    animation: Title 3s both ease-in-out infinite alternate;
+    text-shadow: 3px 3px 5px #3a3838;
+}
+
+@keyframes Title {
+    0% {
+    background-image: linear-gradient(to right, #ff105f, #3cff06);    }
+
+        25% {
+            background-image: linear-gradient(to right, #300a72, #ffffff);
+        }
+
+                50% {
+                    background-image: linear-gradient(to right, #b7b7b7, #3cff06);
+                }
+
+    75% {
+        background-image: linear-gradient(to right, #ddff00, #b05918);
+    }
+   100% {
+        background-image: linear-gradient(to right, #ff105f, #3cff06);
+    }
 }
 
 header h1:hover {
@@ -51,6 +77,7 @@ header h1:hover {
                 -5px 5px 2px #ffffff80; /* Complex shadow effect */
     border: 1px solid rgba(255, 255, 255, 0.2); 
     margin: 10px;
+    text-align: center;
 }
 
 #inputs form input, #search input {
