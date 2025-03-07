@@ -90,6 +90,11 @@ button:hover {
     color: #111;
 }
 
+#show-data {
+  
+    text-align: center;
+    margin: 20px;
+}
 #search { 
     align-items: center;
     padding: 20px;
@@ -117,8 +122,11 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
     font-size: 1em;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15) ,
+                5px -5px 5px rgba(0, 0, 0, 0.15),
+            -5px 5px 5px rgba(0, 0, 0, 0.15),
+            -5px -5px 5px rgba(0, 0, 0, 0.15); /* Multiple shadows */
 }
 
 table thead tr {
@@ -128,9 +136,14 @@ table thead tr {
     font-weight: bold;
 }
 
+table th
+{
+    text-shadow: 5px 5px 5px #000000;
+}
 table th,
 table td {
-    padding: 12px 15px;
+    padding: 12px 5px;
+    text-align: center;
 }
 
 table tbody tr {
