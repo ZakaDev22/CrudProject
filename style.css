@@ -101,10 +101,10 @@ button:hover {
     margin: 20px;
 }
 #search { 
-    align-items: center;
+   text-align: center;
     padding: 20px;
     margin: 20px;
-    background: rgba(155, 24, 24, 0.1); 
+    background: #9b18181a; 
     border-radius: 10px;
     backdrop-filter: blur(10px); 
     box-shadow: 5px 5px 15px #0b732380;
@@ -119,6 +119,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 table {
