@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zaka Crud Project</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <head>
+    <header>
         <h1>CRUD Project</h1>
         <p>This is My First HTML CSS JS Crud Project</p>
-    </head>
+    </header>
     <main>
         <section id="inputs">
             <h2>Add New User</h2>
@@ -23,12 +24,12 @@
                 <input type="number" placeholder="Age" id="age" min="0" max="100" required>
                 <input type="text" placeholder="City" id="city" required>
                 <input type="text" placeholder="Role" id="role" required>
-                <button type="submit">Add User</button>
+                <button type="submit" id="submit">Add User</button>
             </form>
         </section>
         <section id="outputs">
             <h2>Users</h2>
-            <table>
+            <table border="1">
                 <thead>
                     <tr>
                         <th>Name</th>
