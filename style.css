@@ -45,7 +45,6 @@ header h1:hover {
     border-radius: 10px;
     padding: 20px;
     backdrop-filter: blur(10px); /* Blur effect */
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
     box-shadow: 5px 5px 15px #ffffff80,
                 -5px -5px 15px #ffffff80,
                 5px -5px 2px #ffffff80,
@@ -63,12 +62,18 @@ header h1:hover {
     transition: 500ms ease all;
 }
 
-#inputs form input:focus {
+input:focus {
     background-color: #000000a9;
     color: white;
     border: 1px solid rgb(75, 189, 0);
     border-radius: 5px;
-    transform: scale(1.05);
+    transform: scale(1.2);
+}
+
+#inputs form:has(input:user-invalid) #submit {
+        cursor: not-allowed;
+        background: #fe0044;
+        border: 2px solid #ffffff;
 }
 
 button {
@@ -82,7 +87,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 3px 4px 10px rgba(255, 255, 255, 0.3); /* Subtle shadow */
 }
 
 button:hover {
@@ -102,7 +107,6 @@ button:hover {
     background: rgba(155, 24, 24, 0.1); 
     border-radius: 10px;
     backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); 
     box-shadow: 5px 5px 15px #0b732380;
     border: 2px solid rgba(255, 255, 255, 0.2); 
 }
