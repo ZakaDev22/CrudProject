@@ -56,9 +56,34 @@ header h1:hover {
     padding: 5px;
 }
 #inputs form input {
+    
     width: 80%;
     padding: 10px;
     margin: 10px 0;
     background-color: #111;
     color: white;
+    transition: 500ms ease all;
+}
+#inputs form input:focus {
+    background-color: #000000a9;
+    color: white;
+    border: 1px solid rgb(75, 189, 0);
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+#inputs form button {
+    display: block;
+    margin: auto;
+    width: 80%;
+    padding: 10px 20px;
+    background-color: #3200fa;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+#inputs form button:hover {
+    background-color: white;
+    color: #111;
 }
