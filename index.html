@@ -28,30 +28,45 @@
             </form>
         </section>
         <section id="outputs">
-            <h2>Users</h2>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Zaka</td>
-                        <td>zaka22@gmail.com</td>
-                        <td>1234567890</td>
-                        <td>
-                            <button>Edit</button>
-                        </td>
-                        <td>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
+           
+            <section id="search">
+                <h2>Search User</h2>
+                <input style="display: block; width: 100%;" type="text" placeholder="Search User" id="search-user">
+                <div class="filterBy">
+                    <button id="search-btn-byName">Search By Name</button>
+                    <button id="search-btn-byEmail">Search By Email</button>
+                </div>
+                <button style="display: block; width: 100%;" type="button"  id="delete-all">Delete All</button>
+
+            </section>
+            <section id="show-data">
+                <h2>Users</h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Zaka</td>
+                            <td>zaka22@gmail.com</td>
+                            <td>1234567890</td>
+                            <td>
+                                <button>Edit</button>
+                            </td>
+                            <td>
+                                <button>Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
     </main>
     <footer>
         <!-- <p>Created By Zaka</p> -->

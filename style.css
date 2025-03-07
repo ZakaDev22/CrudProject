@@ -71,7 +71,7 @@ header h1:hover {
     transform: scale(1.05);
 }
 
-#inputs form button {
+button {
     display: block;
     margin: auto;
     width: 80%;
@@ -85,7 +85,7 @@ header h1:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-#inputs form button:hover {
+button:hover {
     background-color: white;
     color: #111;
 }
