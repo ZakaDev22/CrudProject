@@ -26,7 +26,7 @@ header {
     margin: 10px;
 }
 
-header h1 {
+header h1 , header p {
     font-size: 2.5rem;
     background-image: linear-gradient(to right, #ff105f, #3cff06);
     -webkit-background-clip: text;
@@ -62,7 +62,6 @@ header h1 {
 header h1:hover {
     transform: scale(1.1);
     background-position: 100% 0;
-    background-image: linear-gradient(to left, #e74279, #0617ff);
     letter-spacing: 3px;
 }
 
