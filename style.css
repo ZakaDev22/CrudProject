@@ -26,7 +26,8 @@ header {
     margin: 10px;
 }
 
-header h1 , header p {
+header h1,
+header p {
     font-size: 2.5rem;
     background-image: linear-gradient(to right, #ff105f, #3cff06);
     -webkit-background-clip: text;
@@ -41,20 +42,22 @@ header h1 , header p {
 
 @keyframes Title {
     0% {
-    background-image: linear-gradient(to right, #ff105f, #3cff06);    }
+        background-image: linear-gradient(to right, #ff105f, #3cff06);
+    }
 
-        25% {
-            background-image: linear-gradient(to right, #300a72, #ffffff);
-        }
+    25% {
+        background-image: linear-gradient(to right, #300a72, #ffffff);
+    }
 
-                50% {
-                    background-image: linear-gradient(to right, #b7b7b7, #3cff06);
-                }
+    50% {
+        background-image: linear-gradient(to right, #b7b7b7, #3cff06);
+    }
 
     75% {
         background-image: linear-gradient(to right, #ddff00, #b05918);
     }
-   100% {
+
+    100% {
         background-image: linear-gradient(to right, #ff105f, #3cff06);
     }
 }
@@ -66,20 +69,24 @@ header h1:hover {
 }
 
 #inputs form {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    background: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent white */
     border-radius: 10px;
     padding: 20px;
-    backdrop-filter: blur(10px); /* Blur effect */
+    backdrop-filter: blur(10px);
+    /* Blur effect */
     box-shadow: 5px 5px 15px #ffffff80,
-                -5px -5px 15px #ffffff80,
-                5px -5px 2px #ffffff80,
-                -5px 5px 2px #ffffff80; /* Complex shadow effect */
-    border: 1px solid rgba(255, 255, 255, 0.2); 
+        -5px -5px 15px #ffffff80,
+        5px -5px 2px #ffffff80,
+        -5px 5px 2px #ffffff80;
+    /* Complex shadow effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
     margin: 10px;
     text-align: center;
 }
 
-#inputs form input, #search input {
+#inputs form input,
+#search input {
     width: 80%;
     padding: 10px;
     margin: 10px 0;
@@ -97,9 +104,9 @@ input:focus {
 }
 
 #inputs form:has(input:user-invalid) #submit {
-        cursor: not-allowed;
-        background: #fe0044;
-        border: 2px solid #ffffff;
+    cursor: not-allowed;
+    background: #fe0044;
+    border: 2px solid #ffffff;
 }
 
 button {
@@ -113,7 +120,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s ease;
-    box-shadow: 3px 4px 10px rgba(255, 255, 255, 0.3); /* Subtle shadow */
+    box-shadow: 3px 4px 10px rgba(255, 255, 255, 0.3);
+    /* Subtle shadow */
 }
 
 button:hover {
@@ -122,26 +130,29 @@ button:hover {
 }
 
 #show-data {
-  
+
     text-align: center;
     margin: 20px;
 }
-#search { 
-   text-align: center;
+
+#search {
+    text-align: center;
     padding: 20px;
     margin: 20px;
-    background: #9b18181a; 
+    background: #9b18181a;
     border-radius: 10px;
-    backdrop-filter: blur(10px); 
+    backdrop-filter: blur(10px);
     box-shadow: 5px 5px 15px #0b732380;
-    border: 2px solid rgba(255, 255, 255, 0.2); 
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
+
 #search button {
     width: 40%;
     margin: 10px;
 }
+
 #search .filterBy {
-   
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -154,10 +165,11 @@ table {
     margin: 20px 0;
     font-size: 1em;
     min-width: 200px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15) ,
-                5px -5px 5px rgba(0, 0, 0, 0.15),
-            -5px 5px 5px rgba(0, 0, 0, 0.15),
-            -5px -5px 5px rgba(0, 0, 0, 0.15); /* Multiple shadows */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15),
+        5px -5px 5px rgba(0, 0, 0, 0.15),
+        -5px 5px 5px rgba(0, 0, 0, 0.15),
+        -5px -5px 5px rgba(0, 0, 0, 0.15);
+    /* Multiple shadows */
 }
 
 table thead tr {
@@ -167,10 +179,10 @@ table thead tr {
     font-weight: bold;
 }
 
-table th
-{
+table th {
     text-shadow: 5px 5px 5px #000000;
 }
+
 table th,
 table td {
     padding: 12px 5px;
