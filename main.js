@@ -61,10 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <td>${user.city}</td>
             <td>${user.role}</td>
             <td>
-                <button class="btn btn-edit" data-index="${index}">Edit</button>
+                <button class="btn-edit" data-index="${index}">Edit</button>
             </td>
             <td>
-                <button class="btn btn-danger" data-index="${index}">Delete</button>
+                <button class="btn-danger" data-index="${index}">Delete</button>
             </td>
             `;
             tbody.appendChild(tr);
