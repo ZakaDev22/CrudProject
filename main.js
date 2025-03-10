@@ -33,8 +33,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Clear the form fields
         form.reset();
-
-        console.log('User added successfully');
-        console.log(users);
     }
 });
