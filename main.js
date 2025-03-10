@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         FillTabelWithData();
     }
 
-    // Example of another function that uses the users list
+    // Function to fill the table with user data
     function FillTabelWithData() {
         // Get a reference to the table body
         const table = document.getElementById('users-table');
@@ -61,49 +61,58 @@ document.addEventListener('DOMContentLoaded', () => {
             <td>${user.city}</td>
             <td>${user.role}</td>
             <td>
-                <button class="btn-edit" data-index="${index}">Edit</button>
+                <button class="btn btn-edit" data-index="${index}">Edit</button>
             </td>
             <td>
-                <button class="btn-danger" data-index="${index}">Delete</button>
+                <button class="btn btn-delete" data-index="${index}">Delete</button>
             </td>
             `;
             tbody.appendChild(tr);
         });
 
-        // Add an event listener to the delete buttons
-        tbody.querySelectorAll('.btn-danger').forEach(button => {
-            button.addEventListener('click', function() {
-                // Get the index of the user to delete
-                const index = button.getAttribute('data-index');
-                // Remove the user from the users array
-                users.splice(index, 1);
-                // Save the updated users array to localStorage
-                localStorage.setItem('users', JSON.stringify(users));
-                // Refresh the table
-                FillTabelWithData();
-            });
+        // Add event listeners to the delete buttons
+        tbody.querySelectorAll('.btn-delete').forEach(button => {
+            button.addEventListener('click', () => handleDelete(button));
         });
 
-        // Add an event listener to the edit buttons
+        // Add event listeners to the edit buttons
         tbody.querySelectorAll('.btn-edit').forEach(button => {
-            button.addEventListener('click', function() {
-                // Get the index of the user to edit
-                const index = button.getAttribute('data-index');
-                // Populate the form with the user's data
-                const user = users[index];
-                name.value = user.name;
-                email.value = user.email;
-                phone.value = user.phone;
-                age.value = user.age;
-                city.value = user.city;
-                role.value = user.role;
-                // Remove the user from the users array
-                users.splice(index, 1);
-                // Save the updated users array to localStorage
-                localStorage.setItem('users', JSON.stringify(users));
-                // Refresh the table
-                FillTabelWithData();
-            });
+            button.addEventListener('click', () => handleEdit(button));
         });
     }
+
+    // Function to handle delete button click
+    function handleDelete(button) {
+        // Get the index of the user to delete
+        const index = button.getAttribute('data-index');
+        // Remove the user from the users array
+        users.splice(index, 1);
+        // Save the updated users array to localStorage
+        localStorage.setItem('users', JSON.stringify(users));
+        // Refresh the table
+        FillTabelWithData();
+    }
+
+    // Function to handle edit button click
+    function handleEdit(button) {
+        // Get the index of the user to edit
+        const index = button.getAttribute('data-index');
+        // Populate the form with the user's data
+        const user = users[index];
+        name.value = user.name;
+        email.value = user.email;
+        phone.value = user.phone;
+        age.value = user.age;
+        city.value = user.city;
+        role.value = user.role;
+        // Remove the user from the users array
+        users.splice(index, 1);
+        // Save the updated users array to localStorage
+        localStorage.setItem('users', JSON.stringify(users));
+        // Refresh the table
+        FillTabelWithData();
+    }
+
+    // Initial call to fill the table with data
+    FillTabelWithData();
 });
