@@ -37,16 +37,51 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear the form fields
         form.reset();
 
-        console.log('User added successfully');
-        console.log(users);
+        // Call the FillTabelWithData function to refresh the table
+        FillTabelWithData();
     }
 
     // Example of another function that uses the users list
-    function displayUsers() {
-        console.log('Displaying users:', users);
-        // Code to display users in the UI
-    }
+    function FillTabelWithData() {
+        // Get a reference to the table body
+        const table = document.getElementById('users-table');
+        const tbody = table.querySelector('tbody');
 
-    // Call displayUsers to show the users when the page loads
-    displayUsers();
+        // Clear any existing table rows
+        tbody.innerHTML = '';
+
+        // Loop through the users list and add a table row for each user
+        users.forEach((user, index) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.phone}</td>
+            <td>${user.age}</td>
+            <td>${user.city}</td>
+            <td>${user.role}</td>
+            <td>
+                <button class="btn btn-danger" data-index="${index}">Delete</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" data-index="${index}">Delete</button>
+            </td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        // Add an event listener to the delete buttons
+        tbody.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the index of the user to delete
+                const index = button.getAttribute('data-index');
+                // Remove the user from the users array
+                users.splice(index, 1);
+                // Save the updated users array to localStorage
+                localStorage.setItem('users', JSON.stringify(users));
+                // Refresh the table
+                FillTabelWithData();
+            });
+        });
+    }
 });
