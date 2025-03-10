@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <td>${user.city}</td>
             <td>${user.role}</td>
             <td>
-                <button class="btn btn-danger" data-index="${index}">Delete</button>
+                <button class="btn btn-edit" data-index="${index}">Edit</button>
             </td>
             <td>
                 <button class="btn btn-danger" data-index="${index}">Delete</button>
@@ -71,10 +71,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Add an event listener to the delete buttons
-        tbody.querySelectorAll('button').forEach(button => {
+        tbody.querySelectorAll('.btn-danger').forEach(button => {
             button.addEventListener('click', function() {
                 // Get the index of the user to delete
                 const index = button.getAttribute('data-index');
+                // Remove the user from the users array
+                users.splice(index, 1);
+                // Save the updated users array to localStorage
+                localStorage.setItem('users', JSON.stringify(users));
+                // Refresh the table
+                FillTabelWithData();
+            });
+        });
+
+        // Add an event listener to the edit buttons
+        tbody.querySelectorAll('.btn-edit').forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the index of the user to edit
+                const index = button.getAttribute('data-index');
+                // Populate the form with the user's data
+                const user = users[index];
+                name.value = user.name;
+                email.value = user.email;
+                phone.value = user.phone;
+                age.value = user.age;
+                city.value = user.city;
+                role.value = user.role;
                 // Remove the user from the users array
                 users.splice(index, 1);
                 // Save the updated users array to localStorage
