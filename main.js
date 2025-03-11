@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let searchDiv = document.getElementById('searchDeleteAll');
 
         let btnDeleteAll = document.createElement('button');
-        btnDeleteAll.innerHTML = 'Delete All';
+        btnDeleteAll.innerHTML = `Delete All  (${users.length}) User(s)`;
         btnDeleteAll.style.width = '100%';
         searchDiv.appendChild(btnDeleteAll);
         btnDeleteAll.addEventListener('click', () => handleDeleteAll());
