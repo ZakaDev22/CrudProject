@@ -8,10 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const city = document.getElementById('city');
     const role = document.getElementById('role');
 
-    // Initialize the users list from localStorage or as an empty array
     let users = JSON.parse(localStorage.getItem('users')) || [];
 
-    // Add an event listener to the form's submit event
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the default form submission behavior
         addUser(); 
@@ -32,10 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         users.push(user);
         localStorage.setItem('users', JSON.stringify(users));
 
-        // Clear the form fields
         form.reset();
-
-        // Call the FillTabelWithData function to refresh the table
         FillTabelWithData();
     }
 
@@ -79,11 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if(users.length > 0){
-
             // Create the delete all button
             CreateDeleteAllButon();
-        }
-        else {
+        } else {
             // Remove the delete all button
             let searchDiv = document.getElementById('searchDeleteAll');
             searchDiv.innerHTML = '';
