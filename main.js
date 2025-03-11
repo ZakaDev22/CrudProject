@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add an event listener to the form's submit event
     form.addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent the default form submission behavior
-        addUser(); // Call the addUser function to handle the form data
+        addUser(); 
     });
 
     // Function to add a user
     function addUser() {
-        // Create a user object with the form data
+
         const user = {
             name: name.value,
             email: email.value,
@@ -29,9 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             role: role.value
         };
 
-        // Add the new user to the users array
         users.push(user);
-        // Save the updated users array to localStorage
         localStorage.setItem('users', JSON.stringify(users));
 
         // Clear the form fields
@@ -43,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fill the table with user data
     function FillTabelWithData() {
-        // Get a reference to the table body
+
         const table = document.getElementById('users-table');
         const tbody = table.querySelector('tbody');
 
@@ -94,21 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to handle delete button click
     function handleDelete(button) {
-        // Get the index of the user to delete
         const index = button.getAttribute('data-index');
-        // Remove the user from the users array
         users.splice(index, 1);
-        // Save the updated users array to localStorage
         localStorage.setItem('users', JSON.stringify(users));
-        // Refresh the table
         FillTabelWithData();
     }
 
     // Function to handle edit button click
     function handleEdit(button) {
-        // Get the index of the user to edit
         const index = button.getAttribute('data-index');
-        // Populate the form with the user's data
         const user = users[index];
         name.value = user.name;
         email.value = user.email;
@@ -116,11 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
         age.value = user.age;
         city.value = user.city;
         role.value = user.role;
-        // Remove the user from the users array
+
         users.splice(index, 1);
-        // Save the updated users array to localStorage
         localStorage.setItem('users', JSON.stringify(users));
-        // Refresh the table
         FillTabelWithData();
     }
 
@@ -137,12 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleDeleteAll() {
         users = [];
-        // Save the updated users array to localStorage
         localStorage.setItem('users', JSON.stringify(users));
-        // Refresh the table
         FillTabelWithData();
     }
 
-    // Initial call to fill the table with data
     FillTabelWithData();
 });
