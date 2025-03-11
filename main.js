@@ -105,6 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
         users.splice(index, 1);
         localStorage.setItem('users', JSON.stringify(users));
         FillTabelWithData();
+
+        scroll({
+            top: 0,
+            behavior: 'smooth',
+        });
     }
 
     function CreateDeleteAllButon()
