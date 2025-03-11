@@ -79,6 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
         tbody.querySelectorAll('.btn-edit').forEach(button => {
             button.addEventListener('click', () => handleEdit(button));
         });
+
+        if(users.length > 0){
+
+            // Create the delete all button
+            CreateDeleteAllButon();
+        }
+        else {
+            // Remove the delete all button
+            let searchDiv = document.getElementById('searchDeleteAll');
+            searchDiv.innerHTML = '';
+        }
     }
 
     // Function to handle delete button click
@@ -107,6 +118,25 @@ document.addEventListener('DOMContentLoaded', () => {
         role.value = user.role;
         // Remove the user from the users array
         users.splice(index, 1);
+        // Save the updated users array to localStorage
+        localStorage.setItem('users', JSON.stringify(users));
+        // Refresh the table
+        FillTabelWithData();
+    }
+
+    function CreateDeleteAllButon()
+    {
+        let searchDiv = document.getElementById('searchDeleteAll');
+
+        let btnDeleteAll = document.createElement('button');
+        btnDeleteAll.innerHTML = 'Delete All';
+        btnDeleteAll.style.width = '100%';
+        searchDiv.appendChild(btnDeleteAll);
+        btnDeleteAll.addEventListener('click', () => handleDeleteAll());
+    }
+
+    function handleDeleteAll() {
+        users = [];
         // Save the updated users array to localStorage
         localStorage.setItem('users', JSON.stringify(users));
         // Refresh the table
