@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to add a user
     function addUser() {
-
         const user = {
             name: name.value,
             email: email.value,
@@ -35,8 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Function to fill the table with user data
-    function FillTabelWithData() {
-
+    function FillTabelWithData(Users = users) {
         const table = document.getElementById('users-table');
         const tbody = table.querySelector('tbody');
 
@@ -44,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tbody.innerHTML = '';
 
         // Loop through the users list and add a table row for each user
-        users.forEach((user, index) => {
+        Users.forEach((user, index) => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
             <td>${user.name}</td>
@@ -63,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tbody.appendChild(tr);
         });
 
+       
         // Add event listeners to the delete buttons
         tbody.querySelectorAll('.btn-delete').forEach(button => {
             button.addEventListener('click', () => handleDelete(button));
@@ -72,15 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
         tbody.querySelectorAll('.btn-edit').forEach(button => {
             button.addEventListener('click', () => handleEdit(button));
         });
-
-        if(users.length > 0){
-            // Create the delete all button
-            CreateDeleteAllButon();
-        } else {
-            // Remove the delete all button
-            let searchDiv = document.getElementById('searchDeleteAll');
-            searchDiv.innerHTML = '';
-        }
+        
+        CreateOrRemoveDeleteAllButon();
     }
 
     // Function to handle delete button click
@@ -111,11 +103,18 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth',
         });
     }
+    
+    function handleDeleteAll() {
+        users = []; // Reassign to a new empty array
+        localStorage.setItem('users', JSON.stringify(users));
+        FillTabelWithData();
+    }
 
-    function CreateDeleteAllButon()
-    {
+
+    function CreateOrRemoveDeleteAllButon() {
+
         let searchDiv = document.getElementById('searchDeleteAll');
-
+        searchDiv.innerHTML = '';
         let btnDeleteAll = document.createElement('button');
         btnDeleteAll.innerHTML = `Delete All  (${users.length}) User(s)`;
         btnDeleteAll.style.width = '100%';
@@ -123,11 +122,31 @@ document.addEventListener('DOMContentLoaded', () => {
         btnDeleteAll.addEventListener('click', () => handleDeleteAll());
     }
 
-    function handleDeleteAll() {
-        users = [];
-        localStorage.setItem('users', JSON.stringify(users));
-        FillTabelWithData();
+    // Declare the searchBy variable before using it
+    let searchBy = 'Name';
+
+    // Handle search Methods
+    let searchByName = document.getElementById('search-byName');
+    searchByName.addEventListener('click', () => HandeleSearchMood('search-byName'));
+    let searchByEmail = document.getElementById('search-byEmail');
+    searchByEmail.addEventListener('click', () => HandeleSearchMood('search-byEmail'));
+
+    function HandeleSearchMood(searchMood) {
+        if (searchMood == 'search-byName') {
+            searchBy = 'Name';
+        } else {
+            searchBy = 'Email';
+        }
     }
 
+    let searchinput = document.getElementById('search-user');
+    searchinput.addEventListener('input', Search);
+    function Search() {
+        let searchValue = searchinput.value;
+        let searchResults = users.filter(user => user[searchBy].includes(searchValue));
+        FillTabelWithData(searchResults);
+    }
+
+    // Fill the table with user data
     FillTabelWithData();
 });
