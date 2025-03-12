@@ -1,4 +1,4 @@
-html {
+html , body {
     scroll-behavior: smooth;
 }
 
@@ -19,7 +19,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     min-height: 100vh;
-    padding-top: 60px; /* Adjust this value based on the height of your nav bar */
+    padding-top: 60px;
 }
 
 header {
