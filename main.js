@@ -138,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     searchByEmail.addEventListener('click', () => HandeleSearchMood('search-byEmail'));
 
     function HandeleSearchMood(searchMood) {
+
         if (searchMood == 'search-byName') {
             searchBy = 'name';
             SearchInput.placeholder = 'Search by Name';
@@ -151,6 +152,8 @@ document.addEventListener('DOMContentLoaded', () => {
             searchByEmail.style.backgroundColor = 'green';
             searchByName.style.backgroundColor = '#3200fa';
         }
+        SearchInput.value = '';
+        FillTabelWithData();
     }
 
     SearchInput.addEventListener('input', Search);
