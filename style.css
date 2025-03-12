@@ -92,6 +92,8 @@ header h1:hover {
 #inputs form input,
 #search input {
     width: 80%;
+    height: 40px;
+    border-radius: 8px;
     padding: 10px;
     margin: 10px 0;
     background-color: #111;
@@ -131,6 +133,10 @@ button {
 button:hover {
     background-color: white;
     color: #111;
+}
+
+.btn-delete {
+    background-color: #ff0000;
 }
 
 #show-data {
