@@ -31,6 +31,48 @@ header {
     margin: 20px;
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #111;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 0;
+}
+
+nav ul {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+    gap: 10px;
+}
+
+nav ul li a {
+    font-family: 'Poppins', sans-serif;
+    font-size: larger;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #009879;
+    border-radius: 5px;
+}
+
+.img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
 header h1,
 header p {
     font-size: 2.5rem;
@@ -210,46 +252,4 @@ table tbody tr:nth-of-type(even) {
 
 table tbody tr:last-of-type {
     border-bottom: 2px solid #009879;
-}
-
-nav {
-    position: fixed; 
-    top: 0; 
-    width: 100%;
-    background-color: #111; 
-    z-index: 1000; 
-    display: flex;
-    justify-content: space-evenly;
-    padding: 10px 0; 
-}
-
-nav ul {
-    width: 60%;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    list-style: none;
-    gap: 10px;
-}
-
-nav ul li a {
-    font-family: 'Poppins', sans-serif;
-    font-size: larger;
-    font-weight: 500;
-    text-decoration: none;
-    color: white;
-    padding: 10px;
-    transition: 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #009879;
-    border-radius: 5px;
-}
-
-.img img{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
 }
