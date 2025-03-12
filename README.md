@@ -12,6 +12,8 @@ This is a **simple CRUD (Create, Read, Update, Delete) application** built with 
 ✅ Responsive design with smooth UI animations  
 
 ## 🎥 Demo Preview
+**Try the project live here:** [zakariafirstwebproject.netlify.app](https://zakariafirstwebproject.netlify.app/)  
+---
 ![Project Screenshot](Images/ProjectImage.png)
 
 
