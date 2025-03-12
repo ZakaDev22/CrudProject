@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', () => handleEdit(button));
         });
         
-        CreateOrRemoveDeleteAllButon();
+        CreateOrRemoveDeleteAllButon(Users);
     }
 
     // Function to handle delete button click
@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         FillTabelWithData();
     }
 
-    // Function to handle edit button click
     function handleEdit(button) {
         const index = button.getAttribute('data-index');
         const user = users[index];
@@ -110,22 +109,28 @@ document.addEventListener('DOMContentLoaded', () => {
         FillTabelWithData();
     }
 
+    function CreateOrRemoveDeleteAllButon(Users) {
 
-    function CreateOrRemoveDeleteAllButon() {
+        if(Users.length == 0){
+            let searchDiv = document.getElementById('searchDeleteAll');
+            searchDiv.innerHTML = '';
+            return;
+        }
 
         let searchDiv = document.getElementById('searchDeleteAll');
         searchDiv.innerHTML = '';
         let btnDeleteAll = document.createElement('button');
-        btnDeleteAll.innerHTML = `Delete All  (${users.length}) User(s)`;
+        btnDeleteAll.innerHTML = `Delete All  (${Users.length}) User(s)`;
         btnDeleteAll.style.width = '100%';
         searchDiv.appendChild(btnDeleteAll);
         btnDeleteAll.addEventListener('click', () => handleDeleteAll());
     }
 
     // Declare the searchBy variable before using it
-    let searchBy = 'Name';
+    let searchBy = 'name';
 
     // Handle search Methods
+    let SearchInput = document.getElementById('search-user');
     let searchByName = document.getElementById('search-byName');
     searchByName.addEventListener('click', () => HandeleSearchMood('search-byName'));
     let searchByEmail = document.getElementById('search-byEmail');
@@ -133,17 +138,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function HandeleSearchMood(searchMood) {
         if (searchMood == 'search-byName') {
-            searchBy = 'Name';
+            searchBy = 'name';
+            SearchInput.placeholder = 'Search by Name';
+            SearchInput.focus();
+            searchByName.style.backgroundColor = 'green';
+            searchByEmail.style.backgroundColor = '#3200fa';
         } else {
-            searchBy = 'Email';
+            searchBy = 'email';
+            SearchInput.placeholder = 'Search by Email';
+            SearchInput.focus();
+            searchByEmail.style.backgroundColor = 'green';
+            searchByName.style.backgroundColor = '#3200fa';
         }
     }
 
-    let searchinput = document.getElementById('search-user');
-    searchinput.addEventListener('input', Search);
+    SearchInput.addEventListener('input', Search);
     function Search() {
-        let searchValue = searchinput.value;
-        let searchResults = users.filter(user => user[searchBy].includes(searchValue));
+
+        if(SearchInput.value == ''){
+            FillTabelWithData();
+            return;
+        }
+
+        let searchValue = SearchInput.value.toLowerCase();
+        let searchResults = users.filter(user => {
+            let fieldValue = user[searchBy] ? user[searchBy].toLowerCase() : '';
+            return fieldValue.includes(searchValue);
+        });
         FillTabelWithData(searchResults);
     }
 
