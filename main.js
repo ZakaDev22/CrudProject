@@ -121,7 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
         searchDiv.innerHTML = '';
         let btnDeleteAll = document.createElement('button');
         btnDeleteAll.innerHTML = `Delete All  (${Users.length}) User(s)`;
-        btnDeleteAll.style.width = '100%';
+        btnDeleteAll.style.width = '80%';
+        btnDeleteAll.style.margin = '10px auto';
         btnDeleteAll.setAttribute('class', 'btn-delete');
         searchDiv.appendChild(btnDeleteAll);
         btnDeleteAll.addEventListener('click', () => handleDeleteAll());
